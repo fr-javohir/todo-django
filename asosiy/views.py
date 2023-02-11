@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from .models import *
 
+
 def home(request):
-    return render(request,'todo.html')
+    data = {
+        "messages": Todo.objects.all()
+    }
+    return render(request, 'todo.html', data)
 # Create your views here.
