@@ -35,6 +35,23 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4),
           0 6px 20px 0 rgba(0, 0, 0, 0.36);
       }
+      .add input,
+      .add select {
+        width: 100%;
+        margin-block: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 0;
+      }
+      .sub {
+        display: flex;
+        margin-left: auto;
+      }
+      .del {
+        display: block;
+        margin-left: 5px;
+        color: #fff;
+      }
     </style>
   </head>
 
@@ -64,17 +81,16 @@
           <hr />
           {{message.holat}}
           <br />
-          <button class="btn btn-primary" style="float: right">
+          <button class="btn btn-primary sub">
             <span class="glyphicon glyphicon-trash"></span
-            ><a href="#">O'chirish</a>
+            ><a href="#" class="del">O'chirish</a>
           </button>
         </div>
         {% endfor %}
       </div>
-      <div class="col-md-1"></div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="submit_form">
-          <form method="POST">
+          <form method="POST" class="add">
             {% csrf_token %}
             <div>
               <input
