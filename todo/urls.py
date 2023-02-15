@@ -6,4 +6,6 @@ urlpatterns = [
     path('todo/', home),
     path('', loginview),
     path('logout/', logoutview),
+    path('register/', register),
+    path('del_todo/<int:son>/', delete_todo),
 ]

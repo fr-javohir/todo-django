@@ -52,15 +52,17 @@
     </style>
   </head>
   <body>
-    <h1>Login - To-Do List</h1>
+    <h1>Register - To-Do List</h1>
     <form method="post">
       {% csrf_token %}
       <label for="username">Username:</label>
       <input type="text" id="username" name="l" required /><br /><br />
       <label for="password">Password:</label>
       <input type="password" id="password" name="p" required /><br /><br />
-      <input type="submit" value="Login" />
+      <label for="c_password">Confirm Password:</label>
+      <input type="password" id="c_password" name="cp" required /><br /><br />
+
+      <input type="submit" value="Register" />
     </form>
-    <a href="/register">Register here</a>
   </body>
 </html>

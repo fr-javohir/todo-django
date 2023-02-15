@@ -12,6 +12,29 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--style-->
     <style>
+      .logout_btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: darkorange;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 20px;
+        border: 0;
+        border-radius: 8px;
+        box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.36);
+        cursor: pointer;
+      }
+      .logout_btn:active {
+        transform: translateY(1px);
+      }
+      .logout_btn a {
+        text-decoration: none;
+        color: inherit;
+      }
       .card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
           0 6px 20px 0 rgba(0, 0, 0, 0.39);
@@ -83,7 +106,7 @@
           <br />
           <button class="btn btn-primary sub">
             <span class="glyphicon glyphicon-trash"></span
-            ><a href="#" class="del">O'chirish</a>
+            ><a href="/del_todo/{{message.id}}/" class="del">O'chirish</a>
           </button>
         </div>
         {% endfor %}
@@ -120,5 +143,8 @@
         </div>
       </div>
     </div>
+    <button class="logout_btn">
+      <a href="/logout/"> Log Out </a>
+    </button>
   </body>
 </html>

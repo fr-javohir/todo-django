@@ -21,6 +21,13 @@ def home(request):
     return redirect('/')
 
 
+def delete_todo(request, son):
+    dt = Todo.objects.get(id=son)
+    if dt.foydalanuvchi == request.user:
+        dt.delete()
+    return redirect('/todo')
+
+
 def loginview(request):
     if request.method == 'POST':
         user = authenticate(username=request.POST.get("l"),
@@ -35,3 +42,13 @@ def loginview(request):
 def logoutview(request):
     logout(request)
     return redirect('/')
+
+
+def register(request):
+    if request.method == "POST" and request.POST.get('p') == request.POST.get('cp'):
+        User.objects.create_user(
+            username=request.POST.get('l'),
+            password=request.POST.get('p')
+        )
+        return redirect('/')
+    return render(request, 'register.html')
