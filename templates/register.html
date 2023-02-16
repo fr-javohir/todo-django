@@ -55,6 +55,12 @@
     <h1>Register - To-Do List</h1>
     <form method="post">
       {% csrf_token %}
+      <label for="i">Ism-Familiya:</label>
+      <input type="text" id="ism" name="i" required /><br /><br />
+      <label for="tr">Talaba raqami:</label>
+      <input type="text" id="tr" name="tr" required /><br /><br />
+      <label for="k">Kurs:</label>
+      <input type="text" id="kurs" name="k" required /><br /><br />
       <label for="username">Username:</label>
       <input type="text" id="username" name="l" required /><br /><br />
       <label for="password">Password:</label>
